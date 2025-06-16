@@ -1,0 +1,28 @@
+form {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #bfc0c0;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+button {
+  padding: 8px 18px;
+  background: #4f8cff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background: #2563eb;
+}

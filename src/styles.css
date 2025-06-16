@@ -1,0 +1,30 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: url('assets/angular logo.png') no-repeat center center fixed;
+}
+
+.app-container {
+  max-width: 1200px;
+  width: 95vw;
+  margin: 40px auto;
+  background: #faf7f7cc;
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+  padding: 40px 48px 48px 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.task-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 32px; /* Aumenta el espacio entre tarjetas */
+  align-items: stretch;
+}

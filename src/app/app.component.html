@@ -1,0 +1,70 @@
+<div class="toast toast-success" *ngIf="toastMessage">
+  <span class="toast-icon">✔</span>
+  <div class="toast-content">
+    {{ toastMessage }}
+  </div>
+  <button class="toast-close" (click)="toastMessage = ''" aria-label="Cerrar">&times;</button>
+</div>
+
+<div class="app-container">
+  <h1>To-Do List</h1>
+
+  <!-- Menú principal -->
+  <div *ngIf="currentView === ''">
+    <nav class="main-menu">
+      <button class="menu-btn" (click)="setView('all')">
+        <span class="menu-icon">
+          <svg width="20" height="20" fill="currentColor"><rect x="4" y="6" width="12" height="2" rx="1"/><rect x="4" y="10" width="12" height="2" rx="1"/><rect x="4" y="14" width="12" height="2" rx="1"/></svg>
+        </span>
+        Ver todas las tareas
+      </button>
+      <button class="menu-btn" (click)="setView('pending')">
+        <span class="menu-icon">
+          <svg width="20" height="20" fill="currentColor"><circle cx="10" cy="10" r="8" stroke="#fff" stroke-width="2" fill="none"/><path d="M10 6v4l2 2" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
+        </span>
+        Ver tareas pendientes
+      </button>
+      <button class="menu-btn" (click)="setView('completed')">
+        <span class="menu-icon">
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20"><path d="M7.629 15.071a1 1 0 0 1-1.414 0l-3.286-3.286a1 1 0 1 1 1.414-1.414l2.579 2.578 6.95-6.95a1 1 0 1 1 1.414 1.414l-7.657 7.658z"/></svg>
+        </span>
+        tareas completadas
+      </button>
+    </nav>
+  </div>
+
+  <!-- Vista para ver todas las tareas -->
+  <div *ngIf="currentView === 'all'">
+    <button class="back-btn" (click)="setView('')">Volver al menú</button>
+    <app-add-task (taskAdded)="taskList.onTaskAdded($event)"></app-add-task>
+    <app-task-list #taskList
+      [filter]="'all'"
+      [showEdit]="true"
+      [showDelete]="true"
+      (toast)="showToast($event)">
+    </app-task-list>
+  </div>
+
+  <!-- Vista para ver tareas pendientes -->
+  <div *ngIf="currentView === 'pending'">
+    <button class="back-btn" (click)="setView('')">Volver al menú</button>
+    <app-task-list
+      [filter]="'pending'"
+      [showEdit]="true"
+      [showDelete]="true"
+      (toast)="showToast($event)">
+    </app-task-list>
+  </div>
+
+  <!-- Vista para ver tareas completadas -->
+  <div *ngIf="currentView === 'completed'">
+    <button class="back-btn" (click)="setView('')">Volver al menú</button>
+    <app-task-list
+      [filter]="'completed'"
+      [showEdit]="false"
+      [showDelete]="true"
+      [showMarkPending]="true"
+      (toast)="showToast($event)">
+    </app-task-list>
+  </div>
+</div>

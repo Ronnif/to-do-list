@@ -1,0 +1,31 @@
+<div class="task-card" [class.completed]="task.completed">
+  <div class="task-header">
+    <div class="task-title-section">
+      <span *ngIf="task.completed" class="completed-label">✔ Completada</span>
+      <input
+        type="checkbox"
+        [checked]="task.completed"
+        (change)="toggleComplete()"
+        [id]="'chk-' + task.id"
+        [title]="'Marcar como completada: ' + task.title"
+        aria-label="Marcar como completada"
+        *ngIf="!task.completed"
+      />
+      <div *ngIf="!editing" class="task-title">{{ task.title }}</div>
+      <div *ngIf="editing" class="edit-fields">
+        <input [(ngModel)]="editTitle" name="editTitle" placeholder="Título" />
+      </div>
+    </div>
+    <div class="task-actions">
+      <button class="btn-primary" *ngIf="editing" (click)="saveEdit()">Guardar</button>
+      <button class="btn-secondary" *ngIf="editing" (click)="cancelEdit()">Cancelar</button>
+      <button class="btn-danger" (click)="deleteTask()">Eliminar</button>
+      <button class="btn-secondary" *ngIf="!editing" (click)="startEdit()">Editar</button>
+      <button class="btn-secondary" *ngIf="showMarkPending" (click)="markAsPending()">Marcar como pendiente</button>
+    </div>
+  </div>
+  <div class="task-desc" *ngIf="!editing">{{ task.description }}</div>
+  <div class="edit-fields" *ngIf="editing">
+    <input [(ngModel)]="editDescription" name="editDescription" placeholder="Descripción" />
+  </div>
+</div>

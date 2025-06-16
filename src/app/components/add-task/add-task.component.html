@@ -1,0 +1,6 @@
+<!-- filepath: c:\Users\User\angular-tdl\src\app\components\add-task\add-task.component.html -->
+<form [formGroup]="taskForm" (ngSubmit)="addTask()">
+  <input formControlName="title" placeholder="Nueva tarea" required />
+  <input formControlName="description" placeholder="Descripción" required />
+  <button class="btn-primary" type="submit">Agregar</button>
+</form>

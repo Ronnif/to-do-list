@@ -1,0 +1,219 @@
+.task-title {
+  font-weight: bold;
+  background: #e3f0fa;
+  color: #2563eb;
+  padding: 10px 14px;
+  border-radius: 8px;
+  margin-bottom: 14px;
+  font-size: 1.1em;
+  display: inline-block; /* <-- Esto hace que el fondo se adapte al texto */
+  box-sizing: border-box;
+  letter-spacing: 0.5px;
+  position: relative;
+  min-width: 80px; /* Opcional: para que no sea demasiado pequeño */
+  max-width: 100%; /* Opcional: evita que se salga de la tarjeta */
+  white-space: pre-line; /* Permite saltos de línea si el título es largo */
+}
+
+.task-title::after {
+  content: "";
+  display: block;
+  height: 1.5px;
+  background: #e0e0e0;
+  margin-top: 10px;
+  border-radius: 1px;
+  width: 100%;
+}
+
+.task-desc {
+  color: #444;
+  font-size: 1em;
+  padding-left: 2px;
+  padding-right: 2px;
+  margin-bottom: 6px;
+  text-align: justify;
+}
+
+.task-card {
+  width: 100%;
+  min-width: 500px;
+  max-width: 500px;
+  align-self: center;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  padding: 24px 20px;
+  margin-bottom: 24px; /* Espacio entre tarjetas */
+  transition: box-shadow 0.2s;
+}
+
+.task-card:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+}
+
+.task-card.completed {
+  background: #e0ffe0;
+  opacity: 0.8;
+  transition: background 0.3s, opacity 0.3s;
+  position: relative;
+}
+
+.task-card.completed .task-title {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.completed-label {
+  color: #16a34a;
+  font-weight: bold;
+  font-size: 1em;
+  margin-bottom: 4px;
+  margin-left: 2px;
+  align-self: flex-start;
+  display: block;
+}
+
+.task-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.task-title-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  position: relative;
+}
+
+.task-header label,
+.task-header .edit-fields {
+  flex: 1 1 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.task-header .edit-fields input {
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 4px;
+}
+
+.edit-fields input {
+  margin-right: 8px;
+}
+
+
+.task-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 8px;
+  margin-bottom: 4px;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.task-img {
+  max-width: 100px;
+  margin-top: 8px;
+  border-radius: 4px;
+}
+
+input[type="text"], textarea {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Botón principal (Agregar, Guardar) */
+.btn-primary {
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  min-width: 110px;
+  padding: 8px 14px;
+  font-size: 1em;
+  font-weight: 500;
+  cursor: pointer;
+  margin-right: 6px;
+  margin-bottom: 4px;
+  box-sizing: border-box;
+  box-shadow: 0 2px 8px rgba(37,99,235,0.08);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+.btn-primary:hover,
+.btn-primary:focus {
+  background: #1e40af;
+  box-shadow: 0 4px 16px rgba(37,99,235,0.13);
+}
+
+/* Botón secundario (Editar, Cancelar, Marcar como pendiente) */
+.btn-secondary {
+  background: #f1f5f9;
+  color: #2563eb;
+  border: 1.5px solid #2563eb;
+  border-radius: 6px;
+  min-width: 110px;
+  padding: 8px 14px;
+  font-size: 1em;
+  font-weight: 500;
+  cursor: pointer;
+  margin-right: 6px;
+  margin-bottom: 4px;
+  box-sizing: border-box;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+}
+.btn-secondary:hover,
+.btn-secondary:focus {
+  background: #2563eb;
+  color: #fff;
+  border-color: #1e40af;
+}
+
+/* Botón de peligro (Eliminar) */
+.btn-danger {
+  background: #ef4444;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  min-width: 110px;
+  padding: 8px 14px;
+  font-size: 1em;
+  font-weight: 500;
+  cursor: pointer;
+  margin-right: 6px;
+  margin-bottom: 4px;
+  box-sizing: border-box;
+  box-shadow: 0 2px 8px rgba(239,68,68,0.08);
+  transition: background 0.2s;
+}
+.btn-danger:hover,
+.btn-danger:focus {
+  background: #b91c1c;
+}
+
+.back-btn {
+  background: #e0e7ef;
+  color: #2563eb;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 22px;
+  font-size: 1em;
+  font-weight: 500;
+  cursor: pointer;
+  margin-bottom: 18px;
+  margin-top: 8px;
+  transition: background 0.2s, color 0.2s;
+  box-shadow: 0 2px 8px rgba(37,99,235,0.04);
+}
+.back-btn:hover,
+.back-btn:focus {
+  background: #2563eb;
+  color: #fff;
+}
