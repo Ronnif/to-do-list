@@ -28,3 +28,7 @@ This is a simple Task Manager application built with Angular. It allows users to
    ng serve
    ```
    The application will be available at `http://localhost:4200`.
+    O puedes iniciar ambos servidores juntos:
+   ```bash
+   npm run start:all
+   ```
