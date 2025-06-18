@@ -7,7 +7,7 @@ Esta es una aplicación de gestión de tareas (To-Do List) construida con Angula
 1. **Clona el repositorio:**
    ```bash
    git clone <repository-url>
-   cd angular-tdl
+   cd to-do-list
    ```
 
 2. **Instala las dependencias:**
