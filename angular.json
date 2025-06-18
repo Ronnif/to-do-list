@@ -2,16 +2,16 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "task-manager-app": {
+    "to-do-list": {
       "projectType": "application",
-      "root": "task-manager-app",
+      "root": "",
       "sourceRoot": "src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/task-manager-app",
+            "outputPath": "dist/to-do-list",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -55,11 +55,11 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "task-manager-app:build"
+            "browserTarget": "to-do-list:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "task-manager-app:build:production"
+              "browserTarget": "to-do-list:build:production"
             }
           }
         },
@@ -92,7 +92,7 @@
       }
     }
   },
-  "defaultProject": "task-manager-app",
+  "defaultProject": "to-do-list",
   "cli": {
     "analytics": false
   }
