@@ -32,8 +32,7 @@ Esta es una aplicación de gestión de tareas (To-Do List) construida con Angula
    ```
    La aplicación estará disponible en `http://localhost:4200`.
 
-   O puedes iniciar ambos servidores juntos:
+6. **O puedes iniciar ambos servidores juntos:**
    ```bash
    npm run start:all
    ```
-
