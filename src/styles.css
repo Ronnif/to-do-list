@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
 html, body {
   height: 100%;
   margin: 0;
@@ -27,4 +29,45 @@ body {
   flex-direction: column;
   gap: 32px; /* Aumenta el espacio entre tarjetas */
   align-items: stretch;
+}
+
+
+.main-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 24px;
+  gap: 0.2em;
+}
+
+.main-title .icon {
+  font-size: 2.5rem;
+  margin-bottom: -15px;
+  filter: drop-shadow(0 2px 6px rgba(37,99,235,0.10));
+  animation: bounce 1.2s infinite alternate;
+}
+
+@keyframes bounce {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-8px); }
+}
+
+.gradient-text {
+  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  background: linear-gradient(90deg, #22d3ee, #2563eb, #38bdf8, #22d3ee);
+  background-size: 200% auto;
+  color: transparent;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-move 2.5s linear infinite alternate;
+  text-align: center;
+  line-height: 1.1;
+}
+
+@keyframes gradient-move {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
 }

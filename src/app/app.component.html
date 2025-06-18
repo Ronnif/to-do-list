@@ -7,7 +7,11 @@
 </div>
 
 <div class="app-container">
-  <h1>To-Do List</h1>
+  <!-- Título dinámico con icono y animación -->
+<div class="main-title">
+  <span class="icon">📝</span>
+  <span class="gradient-text">To-Do List</span>
+</div>
 
   <!-- Menú principal -->
   <div *ngIf="currentView === ''">
@@ -16,13 +20,13 @@
         <span class="menu-icon">
           <svg width="20" height="20" fill="currentColor"><rect x="4" y="6" width="12" height="2" rx="1"/><rect x="4" y="10" width="12" height="2" rx="1"/><rect x="4" y="14" width="12" height="2" rx="1"/></svg>
         </span>
-        Ver todas las tareas
+        ver y agregar tareas
       </button>
       <button class="menu-btn" (click)="setView('pending')">
         <span class="menu-icon">
           <svg width="20" height="20" fill="currentColor"><circle cx="10" cy="10" r="8" stroke="#fff" stroke-width="2" fill="none"/><path d="M10 6v4l2 2" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
         </span>
-        Ver tareas pendientes
+        tareas pendientes
       </button>
       <button class="menu-btn" (click)="setView('completed')">
         <span class="menu-icon">

@@ -23,4 +23,8 @@ export class AddTaskComponent {
       this.taskForm.reset();
     }
   }
+//limpia el formulario al cancelar
+cancelAdd() {
+  this.taskForm.reset();
+  }
 }

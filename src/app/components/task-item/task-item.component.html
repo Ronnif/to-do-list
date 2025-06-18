@@ -1,31 +1,48 @@
 <div class="task-card" [class.completed]="task.completed">
-  <div class="task-header">
-    <div class="task-title-section">
-      <span *ngIf="task.completed" class="completed-label">✔ Completada</span>
-      <input
-        type="checkbox"
-        [checked]="task.completed"
-        (change)="toggleComplete()"
-        [id]="'chk-' + task.id"
-        [title]="'Marcar como completada: ' + task.title"
-        aria-label="Marcar como completada"
-        *ngIf="!task.completed"
-      />
-      <div *ngIf="!editing" class="task-title">{{ task.title }}</div>
-      <div *ngIf="editing" class="edit-fields">
-        <input [(ngModel)]="editTitle" name="editTitle" placeholder="Título" />
+  <!-- Modo edición: se muestra cuando editing es true -->
+  <ng-container *ngIf="editing; else normalView">
+    <!-- Campos de edición: título y descripción ocupan todo el ancho -->
+    <div class="edit-fields">
+      <input [(ngModel)]="editTitle" name="editTitle" placeholder="Título" />
+      <textarea [(ngModel)]="editDescription" name="editDescription" placeholder="Descripción"></textarea>
+    </div>
+    <!-- Botones de acción en modo edición -->
+    <div class="task-actions">
+      <button class="btn-primary" (click)="saveEdit()">Guardar</button>
+      <button class="btn-secondary" (click)="cancelEdit()">Cancelar</button>
+      <button class="btn-danger" (click)="deleteTask()">Eliminar</button>
+    </div>
+  </ng-container>
+
+  <!-- Modo visualización: se muestra cuando editing es false -->
+  <ng-template #normalView>
+    <div class="task-header">
+      <div class="task-title-section">
+        <!-- Etiqueta de completada solo si la tarea está completada -->
+        <span *ngIf="task.completed" class="completed-label">✔ Completada</span>
+        <!-- Checkbox para marcar como completada solo si NO está completada -->
+        <input
+          type="checkbox"
+          [checked]="task.completed"
+          (change)="toggleComplete()"
+          [id]="'chk-' + task.id"
+          [title]="'Marcar como completada: ' + task.title"
+          aria-label="Marcar como completada"
+          *ngIf="!task.completed"
+        />
+        <!-- Título de la tarea -->
+        <div class="task-title">{{ task.title }}</div>
+      </div>
+      <!-- Botones de acción en modo visualización -->
+      <div class="task-actions">
+        <button class="btn-danger" (click)="deleteTask()">Eliminar</button>
+        <!-- Botón Editar solo si la tarea NO está completada -->
+        <button class="btn-secondary" *ngIf="!task.completed" (click)="startEdit()">Editar</button>
+        <!-- Botón Marcar como pendiente solo si la tarea está completada -->
+        <button class="btn-secondary" *ngIf="task.completed" (click)="markAsPending()">Marcar como pendiente</button>
       </div>
     </div>
-    <div class="task-actions">
-      <button class="btn-primary" *ngIf="editing" (click)="saveEdit()">Guardar</button>
-      <button class="btn-secondary" *ngIf="editing" (click)="cancelEdit()">Cancelar</button>
-      <button class="btn-danger" (click)="deleteTask()">Eliminar</button>
-      <button class="btn-secondary" *ngIf="!editing" (click)="startEdit()">Editar</button>
-      <button class="btn-secondary" *ngIf="showMarkPending" (click)="markAsPending()">Marcar como pendiente</button>
-    </div>
-  </div>
-  <div class="task-desc" *ngIf="!editing">{{ task.description }}</div>
-  <div class="edit-fields" *ngIf="editing">
-    <input [(ngModel)]="editDescription" name="editDescription" placeholder="Descripción" />
-  </div>
+    <!-- Descripción de la tarea -->
+    <div class="task-desc">{{ task.description }}</div>
+  </ng-template>
 </div>
