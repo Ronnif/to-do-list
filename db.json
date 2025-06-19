@@ -1,46 +1,10 @@
 {
   "tasks": [
     {
-      "title": "python",
-      "description": "machine learning",
+      "title": "Matematicas",
+      "description": "Me falta completar los ejercicios de la semana 10 y 11",
       "completed": false,
       "id": 1
-    },
-    {
-      "title": "node.js",
-      "description": "backend",
-      "completed": true,
-      "id": 2
-    },
-    {
-      "title": "angular",
-      "description": "framework",
-      "completed": true,
-      "id": 3
-    },
-    {
-      "title": "rrwerewrer",
-      "description": "ffffffffffffffffffffffffffffff44f4f44444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444",
-      "completed": false,
-      "id": 8
-    },
-    {
-      "title": "ffffffffffffffffffffs  en otodo los lados de  cada union dsd e  sdkedededed",
-      "description": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd   dasd sd d   ssds d  ddsdddssdds   ds d",
-      "completed": false,
-      "id": 9
-    },
-    {
-      "title": "fsdfsfsd",
-      "description": "La norma IEEE Std 830-1998 es una guía importante en el ámbito de la ingeniería de software, específicamente relacionada con la documentación de requisitos de software. Esta norma establece las recomendaciones para la producción de Especificaciones de Requisitos de Software (SRS, por sus siglas en inglés), que son documentos fffdetallados que describen el comportamiento del sistema a desarrollar y definen las necesidades y expectativas de los interesados.  Contenido principal de la norma IEEE Std 830-1998: Propósito del SRS: Se describe cómo la SRS debe proporcionar una base clara para que los desarrolladores, gerentes, clientes y otros interesados comprendan las funcionalidades esperadas del software.  Características del SRS: Un buen SRS debe ser completo, claro, coherente, rastreable, verificable y modificable.  Contenido de la SRS: La norma sugiere una estructura típica que incluye:fffhfhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh",
-      "completed": false,
-      "id": 10
-    },
-    {
-      "title": "web 2",
-      "description": "La norma IEEE Std 830-1998 es una guía importante en el ámbito de la ingeniería de software, específicamente relacionada con la documentación de requisitos de software. Esta norma establece las recomendaciones para la producción de Especificaciones de Requisitos de Software (SRS, por sus siglas en inglés), que son documentos fffdetallados que describen el comportamiento del sistema a desarrollar y definen las necesidades y expectativas de los interesados. Contenido principal de la norma IEEE Std 830-1998: Propósito del SRS: Se describe cómo la SRS debe propforcionar una base clara para que los desarrolladores, gerentes, clientes y otros interesados comprendan las funcionalidades esperadas del software. C",
-      "completed": true,
-      "id": 11
     }
   ]
 }
