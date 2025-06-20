@@ -8,9 +8,9 @@
     </div>
     <!-- Botones de acción en modo edición -->
     <div class="task-actions">
-      <button class="btn-primary" (click)="saveEdit()">Guardar</button>
-      <button class="btn-secondary" (click)="cancelEdit()">Cancelar</button>
-      <button class="btn-danger" (click)="deleteTask()">Eliminar</button>
+      <button class="btn-primary" (click)="saveEdit()" aria-label="Guardar cambios de la tarea">Guardar</button>
+      <button class="btn-secondary" (click)="cancelEdit()" aria-label="Cancelar edición de la tarea">Cancelar</button>
+      <button class="btn-danger" (click)="deleteTask()" aria-label="Eliminar tarea">Eliminar</button>
     </div>
   </ng-container>
 
@@ -35,11 +35,9 @@
       </div>
       <!-- Botones de acción en modo visualización -->
       <div class="task-actions">
-        <button class="btn-danger" (click)="deleteTask()">Eliminar</button>
-        <!-- Botón Editar solo si la tarea NO está completada -->
-        <button class="btn-secondary" *ngIf="!task.completed" (click)="startEdit()">Editar</button>
-        <!-- Botón Marcar como pendiente solo si la tarea está completada -->
-        <button class="btn-secondary" *ngIf="task.completed" (click)="markAsPending()">Marcar como pendiente</button>
+        <button class="btn-danger" (click)="deleteTask()" aria-label="Eliminar tarea">Eliminar</button>
+        <button class="btn-secondary" *ngIf="!task.completed" (click)="startEdit()" aria-label="Editar tarea">Editar</button>
+        <button class="btn-secondary" *ngIf="task.completed" (click)="markAsPending()" aria-label="Marcar tarea como pendiente">Marcar como pendiente</button>
       </div>
     </div>
     <!-- Descripción de la tarea -->

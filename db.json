@@ -3,8 +3,26 @@
     {
       "title": "Matematicas",
       "description": "Me falta completar los ejercicios de la semana 10 y 11",
+      "completed": true,
+      "id": "1"
+    },
+    {
+      "title": "paginas web",
+      "description": "realizar un todo list",
       "completed": false,
-      "id": 1
+      "id": "2"
+    },
+    {
+      "title": "base de datos",
+      "description": "postgre sql",
+      "completed": true,
+      "id": "3"
+    },
+    {
+      "title": "web1",
+      "description": "proceso",
+      "completed": false,
+      "id": "5"
     }
   ]
 }

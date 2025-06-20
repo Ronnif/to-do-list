@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter, inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -10,7 +10,9 @@ export class AddTaskComponent {
   @Output() taskAdded = new EventEmitter<{ title: string; description: string }>();
   taskForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  private fb = inject(FormBuilder);
+
+  constructor() {
     this.taskForm = this.fb.group({
       title: ['', Validators.required],
       description: ['', Validators.required]
@@ -23,8 +25,8 @@ export class AddTaskComponent {
       this.taskForm.reset();
     }
   }
-//limpia el formulario al cancelar
-cancelAdd() {
-  this.taskForm.reset();
+
+  cancelAdd() {
+    this.taskForm.reset();
   }
 }

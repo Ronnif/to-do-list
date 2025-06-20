@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input, OnChanges, SimpleChanges, inject } from '@angular/core';
 import { TaskService } from '../../services/task.service';
 import { Task } from '../../models/task.model';
 
@@ -19,7 +19,7 @@ export class TaskListComponent implements OnInit, OnChanges {
   @Input() showDelete: boolean = true;
   @Input() showMarkPending: boolean = false;
 
-  constructor(private taskService: TaskService) {}
+  private taskService = inject(TaskService);
 
   ngOnInit() {
     this.loadTasks();
@@ -33,7 +33,6 @@ export class TaskListComponent implements OnInit, OnChanges {
 
   loadTasks() {
     this.taskService.getTasks().subscribe(tasks => {
-      // Convierte id a número antes de ordenar
       let sortedTasks = tasks
         .map(task => ({ ...task, id: Number(task.id) }))
         .sort((a, b) => b.id - a.id);

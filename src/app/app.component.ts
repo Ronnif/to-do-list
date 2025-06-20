@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  currentView: string = '';
+  currentView: string = ''; // Esto mostrará el menú principal al iniciar
   toastMessage: string = '';
 
   setView(view: string) {
