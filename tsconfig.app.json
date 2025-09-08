@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./out-tsc/app",
+    "types": [],
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": [
+    "src/**/*.d.ts",
+    "src/**/*.ts"
+  ]
+}

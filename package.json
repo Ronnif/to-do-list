@@ -1,0 +1,41 @@
+{
+  "name": "to-do-list",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e",
+    "json-server": "json-server --watch db.json",
+    "start:all": "concurrently \"ng serve\" \"json-server --watch db.json\""
+  },
+  "dependencies": {
+    "@angular/animations": "^18.0.0",
+    "@angular/common": "^18.0.0",
+    "@angular/compiler": "^18.0.0",
+    "@angular/core": "^18.0.0",
+    "@angular/forms": "^18.0.0",
+    "@angular/platform-browser": "^18.0.0",
+    "@angular/platform-browser-dynamic": "^18.0.0",
+    "@angular/router": "^18.0.0",
+    "mongoose": "^8.18.1",
+    "rxjs": "^7.8.1",
+    "zone.js": "^0.14.4"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^18.0.0",
+    "@angular/cli": "^18.0.0",
+    "@angular/compiler-cli": "^18.0.0",
+    "@types/jasmine": "^4.3.5",
+    "@types/node": "^20.11.30",
+    "angular-eslint": "20.1.1",
+    "concurrently": "^9.1.2",
+    "eslint": "^9.29.0",
+    "json-server": "^0.17.4",
+    "typescript": "^5.4.5",
+    "typescript-eslint": "8.34.1"
+  }
+}

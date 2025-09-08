@@ -1,0 +1,15 @@
+<!-- filepath: c:\Users\User\angular-tdl\src\app\components\add-task\add-task.component.html -->
+<div class="add-task-card">
+  <form [formGroup]="taskForm" (ngSubmit)="addTask()" class="add-task-form">
+    <label for="title-input" class="visually-hidden">Título de la tarea</label>
+    <input id="title-input" formControlName="title" placeholder="Nueva tarea" required maxlength="80" aria-label="Título de la tarea" />
+
+    <label for="desc-input" class="visually-hidden">Descripción de la tarea</label>
+    <textarea id="desc-input" formControlName="description" placeholder="Descripción" rows="4" aria-label="Descripción de la tarea"></textarea>
+
+    <div class="form-actions">
+      <button class="btn-secondary" type="button" (click)="cancelAdd()" aria-label="Cancelar agregar tarea">Cancelar</button>
+      <button class="btn-primary" type="submit" aria-label="Agregar tarea">Agregar</button>
+    </div>
+  </form>
+</div>

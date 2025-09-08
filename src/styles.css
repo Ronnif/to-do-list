@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@600&display=swap');
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: url('assets/angular logo.png') no-repeat center center fixed;
+}
+
+.app-container {
+  max-width: 1200px;
+  width: 95vw;
+  margin: 40px auto;
+  background: #faf7f7cc;
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+  padding: 40px 48px 48px 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.task-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 32px; /* Aumenta el espacio entre tarjetas */
+  align-items: stretch;
+}
+
+
+.main-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 24px;
+  gap: 0.2em;
+}
+
+
+.main-title-icon {
+  font-size: 3.5rem;         /* Más grande */
+  color: #2575fc;
+  margin-bottom: -10px;
+  filter: drop-shadow(0 4px 16px rgba(37,117,252,0.13));
+  animation: bounce 1.2s infinite alternate;
+}
+
+@keyframes bounce {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-8px); }
+}
+
+.gradient-text {
+  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+  font-size: 3.2rem;           /* Más grande */
+  font-weight: 800;
+  letter-spacing: 2px;
+  background: linear-gradient(90deg, #33046a 0%, #2575fc 100%);
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-move 2.5s linear infinite alternate;
+  text-align: center;
+  line-height: 1.1;
+}
+
+@keyframes gradient-move {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+.subtitle {
+  font-family: 'Poppins', 'Montserrat', 'Segoe UI', Arial, sans-serif;
+  font-size: 1.7rem;
+  color: #6a11cb;
+  margin-top: 1.8rem;
+  margin-bottom: 2.8rem;
+  display: block;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 1px;
+  opacity: 0;
+  background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: subtitleFadeIn 1.2s 0.5s forwards, subtitleSlideIn 1.2s 0.5s forwards, subtitleWave 2.5s 1.7s infinite alternate;
+}
+
+@keyframes subtitleFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes subtitleSlideIn {
+  from { transform: translateY(32px);}
+  to { transform: translateY(0);}
+}
+@keyframes subtitleWave {
+  0% { letter-spacing: 1px; }
+  50% { letter-spacing: 4px; }
+  100% { letter-spacing: 1px; }
+}
